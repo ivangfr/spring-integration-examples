@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: spring-integration-shell
+
+calculator-api:
+  url: http://localhost:8080/api/calculate
+
+logging.level.root: off
