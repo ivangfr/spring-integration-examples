@@ -11,7 +11,7 @@ import java.time.LocalTime;
 public class GreetingIntegrationService {
 
     @ServiceActivator(inputChannel = "greetingRouterChannel")
-    public String greetingServiceActivator(@Payload GreetingDto greetingDto) {
+    public String greetingHandler(@Payload GreetingDto greetingDto) {
         String greeting;
         LocalTime now = LocalTime.now();
         if (now.isBefore(LocalTime.of(12, 0))) {

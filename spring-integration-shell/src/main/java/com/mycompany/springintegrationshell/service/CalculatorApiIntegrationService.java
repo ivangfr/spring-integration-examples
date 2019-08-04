@@ -30,7 +30,7 @@ public class CalculatorApiIntegrationService {
     }
 
     @ServiceActivator(inputChannel = "calculatorRouterChannel")
-    public String calculatorServiceActivator(@Payload CalculatorApiDto calculatorApiDto) throws JsonProcessingException {
+    public String calculatorHandler(@Payload CalculatorApiDto calculatorApiDto) throws JsonProcessingException {
         String calculatorApiDtoStr = objectMapper.writeValueAsString(calculatorApiDto);
 
         HttpHeaders headers = new HttpHeaders();
