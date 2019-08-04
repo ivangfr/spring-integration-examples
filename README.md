@@ -30,6 +30,13 @@ Open a terminal and inside `spring-integration-examples` run
 ./mvnw clean spring-boot:run --projects calculator-api
 ```
 
+Sample of calls to `calculator-api`
+```
+curl -i -X POST http://localhost:8080/api/calculate \
+  -H 'Content-Type: application/json' \
+  -d '{"operation": "ADD", "a": 10, "b": 12}'
+```
+
 ### spring-integration-shell
 
 Open another terminal and inside `spring-integration-examples` root folder, run the command below to package the `jar`
@@ -42,3 +49,6 @@ Then, still inside `spring-integration-examples`, run the following command to s
 ./spring-integration-shell/target/spring-integration-shell-1.0.0.jar
 ```
 
+Sample of the shell interface and execution
+
+![project-diagram](images/spring-integration-shell.png)
