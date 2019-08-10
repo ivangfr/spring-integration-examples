@@ -67,3 +67,8 @@ Open a terminal and inside `spring-integration-examples` run
 Sample of the shell interface and execution
 
 ![project-diagram](images/spring-integration-shell.png)
+
+## References
+
+- https://docs.spring.io/spring-integration/reference/html/index.html
+- https://github.com/spring-projects/spring-integration/blob/master/src/reference/asciidoc/file.adoc
