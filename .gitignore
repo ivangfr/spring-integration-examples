@@ -1,5 +1,6 @@
 *.DS_Store
 *.log
+shared-integration-files/
 
 target/
 !.mvn/wrapper/maven-wrapper.jar

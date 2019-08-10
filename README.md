@@ -15,11 +15,19 @@ well known [`Enterprise Integration Patterns`](https://www.enterpriseintegration
 Spring Boot Java Web application that exposes one endpoint `api/calculate` so that users can submit which operation
 (addition, subtraction, division or multiplication) they want to perform over two decimal numbers `a` and `b`.
 
+### file-service
+
+Spring Boot Java Web application that exposes one endpoint `api/files/{filename}` so that users can get information
+about a file. This service keeps looking at `shared-integration-files` folder for new created or modified files and
+save their content and info in [`MongoDB`](https://www.mongodb.com/).
+
 ### spring-integration-shell
 
-Spring Boot Shell Java application that uses `calculator-api` to compute the four basic Math operations: addition,
-subtraction, division and multiplication. All the communication with `calculator-api` is over `HTTP`. Besides, it also
-has the command `greet`, so that you can display a greeting message on the screen.
+Spring Boot Shell Java application that has a couple of commands. One is to write some content to a file. Those files are
+stored in `shared-integration-files` folder. Besides, there are some commands that uses `calculator-api` to compute the
+basic Math operations. There is also has a command that calls `file-service` in order to get information about a file.
+All the communication with `calculator-api` and `file-service` is over `HTTP`. Finally, there is a simple command called
+`greet`, so that you can display a greeting message on the screen depending on the time of the day.
 
 ## Running Microservices
 
@@ -27,26 +35,33 @@ has the command `greet`, so that you can display a greeting message on the scree
 
 Open a terminal and inside `spring-integration-examples` run
 ```
-./mvnw clean spring-boot:run --projects calculator-api
+./mvnw clean spring-boot:run --projects calculator-api -Dspring-boot.run.jvmArguments="-Dserver.port=9080"
 ```
 
 Sample of calls to `calculator-api`
 ```
-curl -i -X POST http://localhost:8080/api/calculate \
+curl -i -X POST http://localhost:9080/api/calculate \
   -H 'Content-Type: application/json' \
   -d '{"operation": "ADD", "a": 10, "b": 12}'
 ```
 
+### file-service
+
+Open a terminal and inside `spring-integration-examples` run
+```
+./mvnw clean spring-boot:run --projects file-service -Dspring-boot.run.jvmArguments="-Dserver.port=9081"
+```
+
+Sample of calls to `file-service`
+```
+curl -i http://localhost:9081/api/files/file.txt
+```
+
 ### spring-integration-shell
 
-Open another terminal and inside `spring-integration-examples` root folder, run the command below to package the `jar`
+Open a terminal and inside `spring-integration-examples` run
 ```
-./mvnw clean package --projects spring-integration-shell -DskipTests
-```
-
-Then, still inside `spring-integration-examples`, run the following command to start `spring-integration-shell`
-```
-./spring-integration-shell/target/spring-integration-shell-1.0.0.jar
+./mvnw clean spring-boot:run --projects spring-integration-shell
 ```
 
 Sample of the shell interface and execution

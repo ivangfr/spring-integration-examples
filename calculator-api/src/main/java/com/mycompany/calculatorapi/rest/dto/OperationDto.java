@@ -18,9 +18,7 @@ public class OperationDto {
     private BigDecimal b;
 
     public enum Type {
-
         ADD, SUBTRACT, DIVIDE, MULTIPLY
-
     }
 
 }

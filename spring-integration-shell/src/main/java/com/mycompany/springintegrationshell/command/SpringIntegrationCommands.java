@@ -1,16 +1,22 @@
 package com.mycompany.springintegrationshell.command;
 
 import com.mycompany.springintegrationshell.dto.CalculatorApiDto;
+import com.mycompany.springintegrationshell.dto.FileInfoDto;
 import com.mycompany.springintegrationshell.dto.GreetingDto;
 import com.mycompany.springintegrationshell.gateway.IntegrationGateway;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
 
 import java.math.BigDecimal;
+import java.nio.file.Paths;
 
 @ShellComponent
 public class SpringIntegrationCommands {
+
+    @Value("${application.outbound.path}")
+    private String outboundPath;
 
     private final IntegrationGateway integrationGateway;
 
@@ -41,6 +47,16 @@ public class SpringIntegrationCommands {
     @ShellMethod("Greet someone")
     public String greet(@ShellOption(defaultValue = "World") String name) {
         return integrationGateway.sendMessage(new GreetingDto(name));
+    }
+
+    @ShellMethod("Get info from file")
+    public String getInfoFromFile(String filename) {
+        return integrationGateway.sendMessage(new FileInfoDto(filename));
+    }
+
+    @ShellMethod("Write to file")
+    public void writeToFile(String filename, String content) {
+        integrationGateway.writeToFile(filename, Paths.get(outboundPath).toFile(), content);
     }
 
 }

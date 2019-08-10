@@ -2,7 +2,14 @@ spring:
   application:
     name: spring-integration-shell
 
+application:
+  outbound:
+    path: ${PWD}/shared-integration-files
+
 calculator-api:
-  url: http://localhost:8080/api/calculate
+  url: http://${CALCULATOR_API_HOST:localhost}:${CALCULATOR_API_PORT:9080}/api/calculate
+
+file-service:
+  url: http://${FILE_SERVICE_HOST:localhost}:${FILE_SERVICE_PORT:9081}/api/files
 
 logging.level.root: off
