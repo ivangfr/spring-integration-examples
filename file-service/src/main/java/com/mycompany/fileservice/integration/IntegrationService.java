@@ -1,6 +1,7 @@
-package com.mycompany.fileservice.service;
+package com.mycompany.fileservice.integration;
 
 import com.mycompany.fileservice.model.MyFile;
+import com.mycompany.fileservice.service.MyFileService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.integration.annotation.ServiceActivator;
 import org.springframework.integration.file.FileHeaders;

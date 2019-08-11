@@ -1,4 +1,4 @@
-package com.mycompany.springintegrationshell.config;
+package com.mycompany.springintegrationshell.integration;
 
 import com.mycompany.springintegrationshell.dto.CalculatorApiDto;
 import com.mycompany.springintegrationshell.dto.FileInfoDto;

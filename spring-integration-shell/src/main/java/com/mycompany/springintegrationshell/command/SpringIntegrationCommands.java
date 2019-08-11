@@ -3,7 +3,7 @@ package com.mycompany.springintegrationshell.command;
 import com.mycompany.springintegrationshell.dto.CalculatorApiDto;
 import com.mycompany.springintegrationshell.dto.FileInfoDto;
 import com.mycompany.springintegrationshell.dto.GreetingDto;
-import com.mycompany.springintegrationshell.gateway.IntegrationGateway;
+import com.mycompany.springintegrationshell.integration.IntegrationGateway;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;

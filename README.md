@@ -29,11 +29,18 @@ basic Math operations. There is also has a command that calls `file-service` in 
 All the communication with `calculator-api` and `file-service` is over `HTTP`. Finally, there is a simple command called
 `greet`, so that you can display a greeting message on the screen depending on the time of the day.
 
+## Start Environment
+
+Open a terminal and inside `spring-integration-examples` root folder run
+```
+docker-compose up -d
+```
+
 ## Running Microservices
 
 ### calculator-api
 
-Open a terminal and inside `spring-integration-examples` run
+In a terminal and inside `spring-integration-examples` run
 ```
 ./mvnw clean spring-boot:run --projects calculator-api -Dspring-boot.run.jvmArguments="-Dserver.port=9080"
 ```
@@ -47,7 +54,7 @@ curl -i -X POST http://localhost:9080/api/calculate \
 
 ### file-service
 
-Open a terminal and inside `spring-integration-examples` run
+Open a new terminal and inside `spring-integration-examples` run
 ```
 ./mvnw clean spring-boot:run --projects file-service -Dspring-boot.run.jvmArguments="-Dserver.port=9081"
 ```
@@ -59,7 +66,7 @@ curl -i http://localhost:9081/api/files/file.txt
 
 ### spring-integration-shell
 
-Open a terminal and inside `spring-integration-examples` run
+Open a new terminal and inside `spring-integration-examples` run
 ```
 ./mvnw clean spring-boot:run --projects spring-integration-shell
 ```

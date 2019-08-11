@@ -1,4 +1,4 @@
-package com.mycompany.calculatorapi.gateway;
+package com.mycompany.calculatorapi.integration;
 
 import com.mycompany.calculatorapi.rest.dto.OperationDto;
 import org.springframework.integration.annotation.Gateway;

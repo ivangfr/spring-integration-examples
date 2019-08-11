@@ -1,4 +1,4 @@
-package com.mycompany.calculatorapi.service;
+package com.mycompany.calculatorapi.integration;
 
 import com.mycompany.calculatorapi.rest.dto.OperationDto;
 import lombok.extern.slf4j.Slf4j;

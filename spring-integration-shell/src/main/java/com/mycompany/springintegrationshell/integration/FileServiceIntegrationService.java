@@ -1,4 +1,4 @@
-package com.mycompany.springintegrationshell.service;
+package com.mycompany.springintegrationshell.integration;
 
 import com.mycompany.springintegrationshell.dto.FileInfoDto;
 import org.springframework.beans.factory.annotation.Value;

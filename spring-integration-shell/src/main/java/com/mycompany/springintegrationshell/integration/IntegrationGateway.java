@@ -1,4 +1,4 @@
-package com.mycompany.springintegrationshell.gateway;
+package com.mycompany.springintegrationshell.integration;
 
 import org.springframework.integration.annotation.Gateway;
 import org.springframework.integration.annotation.MessagingGateway;

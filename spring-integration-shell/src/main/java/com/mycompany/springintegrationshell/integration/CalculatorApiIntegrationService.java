@@ -1,4 +1,4 @@
-package com.mycompany.springintegrationshell.service;
+package com.mycompany.springintegrationshell.integration;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

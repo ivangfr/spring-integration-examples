@@ -1,4 +1,4 @@
-package com.mycompany.fileservice.config;
+package com.mycompany.fileservice.integration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
