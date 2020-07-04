@@ -3,6 +3,7 @@ package com.mycompany.springintegrationshell.integration;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mycompany.springintegrationshell.dto.CalculatorApiDto;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -13,6 +14,7 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+@RequiredArgsConstructor
 @Component
 public class CalculatorApiIntegrationService {
 
@@ -21,11 +23,6 @@ public class CalculatorApiIntegrationService {
 
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
-
-    public CalculatorApiIntegrationService(RestTemplate restTemplate, ObjectMapper objectMapper) {
-        this.restTemplate = restTemplate;
-        this.objectMapper = objectMapper;
-    }
 
     @ServiceActivator(inputChannel = "calculatorRouterChannel")
     public String calculatorHandler(@Payload CalculatorApiDto calculatorApiDto) throws JsonProcessingException {

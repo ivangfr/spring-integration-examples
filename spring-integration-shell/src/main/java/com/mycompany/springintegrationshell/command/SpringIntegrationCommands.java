@@ -4,6 +4,7 @@ import com.mycompany.springintegrationshell.dto.CalculatorApiDto;
 import com.mycompany.springintegrationshell.dto.FileInfoDto;
 import com.mycompany.springintegrationshell.dto.GreetingDto;
 import com.mycompany.springintegrationshell.integration.IntegrationGateway;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
@@ -12,6 +13,7 @@ import org.springframework.shell.standard.ShellOption;
 import java.math.BigDecimal;
 import java.nio.file.Paths;
 
+@RequiredArgsConstructor
 @ShellComponent
 public class SpringIntegrationCommands {
 
@@ -19,10 +21,6 @@ public class SpringIntegrationCommands {
     private String outboundPath;
 
     private final IntegrationGateway integrationGateway;
-
-    public SpringIntegrationCommands(IntegrationGateway integrationGateway) {
-        this.integrationGateway = integrationGateway;
-    }
 
     @ShellMethod("Add two numbers")
     public String add(BigDecimal a, BigDecimal b) {

@@ -7,9 +7,9 @@ import java.math.BigDecimal;
 @Value
 public class CalculatorApiDto {
 
-    private Type operation;
-    private BigDecimal a;
-    private BigDecimal b;
+    Type operation;
+    BigDecimal a;
+    BigDecimal b;
 
     public enum Type {
         ADD, SUBTRACT, DIVIDE, MULTIPLY

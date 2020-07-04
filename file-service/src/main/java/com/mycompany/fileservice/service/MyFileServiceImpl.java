@@ -3,16 +3,14 @@ package com.mycompany.fileservice.service;
 import com.mycompany.fileservice.exception.MyFileNotFoundException;
 import com.mycompany.fileservice.model.MyFile;
 import com.mycompany.fileservice.repository.MyFileRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+@RequiredArgsConstructor
 @Service
 public class MyFileServiceImpl implements MyFileService {
 
     private final MyFileRepository myFileRepository;
-
-    public MyFileServiceImpl(MyFileRepository myFileRepository) {
-        this.myFileRepository = myFileRepository;
-    }
 
     @Override
     public MyFile getFile(String filename) throws MyFileNotFoundException {
