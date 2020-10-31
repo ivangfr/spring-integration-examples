@@ -8,7 +8,7 @@ The goal of this project is to learn [`String Integration Framework`](https://do
 
 ## Applications
 
-- **calculator-api**
+- ### calculator-api
 
   `Spring Boot` Java Web application that exposes an endpoint so that users can submit which operation (addition, subtraction, division or multiplication) they want to perform over two decimal numbers `a` and `b`.
   
@@ -16,7 +16,7 @@ The goal of this project is to learn [`String Integration Framework`](https://do
   POST /api/calculate -d { "a": number, "b": number, "operation": ["ADD" | "SUBTRACT" | "DIVIDE" | "MULTIPLY"] }
   ```
   
-- **file-service**
+- ### file-service
 
   `Spring Boot` Java Web application that exposes an endpoint so that users can get information about a file. This service keeps looking at `shared-integration-files` folder for new created or modified files and save their content and info in [`MongoDB`](https://www.mongodb.com/).
   
@@ -24,7 +24,7 @@ The goal of this project is to learn [`String Integration Framework`](https://do
   GET api/files/{filename}
   ```
 
-- **spring-integration-shell**
+- ### spring-integration-shell
 
   `Spring Boot Shell` Java application that has a couple of commands. One is to write some content to a file. Those files are stored in `shared-integration-files` folder. Besides, there are some commands that uses `calculator-api` to compute the basic Math operations. There is also has a command that calls `file-service` in order to get information about a file. All the communication with `calculator-api` and `file-service` is over `HTTP`. Finally, there is a simple command called `greet`, so that you can display a greeting message on the screen depending on the time of the day.
 
@@ -86,7 +86,7 @@ The goal of this project is to learn [`String Integration Framework`](https://do
 
 - **MongoDB**
 
-  Find all products
+  Find all files
   ```
   docker exec -it mongodb mongo
   use filesdb
