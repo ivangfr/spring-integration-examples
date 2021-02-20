@@ -92,12 +92,12 @@ The goal of this project is to learn [`String Integration Framework`](https://do
   use filesdb
   db.myFiles.find()
   ```
-  > Type exit to get out of `MongoDB shell`
+  > Type `exit` to get out of `MongoDB shell`
 
 ## Shutdown
 
 - Go to `spring-integration-shell` terminal and type `exit`
-- Go to `calculator-api` and `file-service` and press `Ctrl+C`
+- Go to `calculator-api` and `file-service` terminals and press `Ctrl+C`
 - To stop and remove `MongoDB` and docker-compose network, run
   ```
   docker-compose down -v
