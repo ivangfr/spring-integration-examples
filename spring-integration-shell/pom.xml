@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.mycompany</groupId>
         <artifactId>spring-integration-examples</artifactId>
@@ -16,9 +15,9 @@
 
     <properties>
         <spring-shell.version>2.0.1.RELEASE</spring-shell.version>
-        <spring-web.version>5.3.4</spring-web.version>
+        <spring-web.version>5.3.7</spring-web.version>
         <httpclient.version>4.5.13</httpclient.version>
-        <jackson-databind.version>2.11.4</jackson-databind.version>
+        <jackson-databind.version>2.12.3</jackson-databind.version>
     </properties>
 
     <dependencies>
@@ -60,33 +59,10 @@
         </dependency>
 
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <executable>true</executable>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

@@ -52,7 +52,7 @@ The goal of this project is to learn [`String Integration Framework`](https://do
   ./mvnw clean spring-boot:run --projects calculator-api -Dspring-boot.run.jvmArguments="-Dserver.port=9080"
   ```
 
-  Sample of calls to `calculator-api`
+  A call sample to `calculator-api`
   ```
   curl -i -X POST http://localhost:9080/api/calculate \
     -H 'Content-Type: application/json' \
@@ -66,7 +66,7 @@ The goal of this project is to learn [`String Integration Framework`](https://do
   ./mvnw clean spring-boot:run --projects file-service -Dspring-boot.run.jvmArguments="-Dserver.port=9081"
   ```
 
-  Sample of calls to `file-service`
+  A call sample to `file-service`
   ```
   curl -i http://localhost:9081/api/files/file.txt
   ```
@@ -78,7 +78,7 @@ The goal of this project is to learn [`String Integration Framework`](https://do
   ./mvnw clean spring-boot:run --projects spring-integration-shell
   ```
     
-  Sample of the shell interface and execution
+  The shell interface and an execution sample
 
   ![spring-integration-shell](images/spring-integration-shell.png)
   
