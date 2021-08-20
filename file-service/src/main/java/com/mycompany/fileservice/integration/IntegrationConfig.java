@@ -1,5 +1,7 @@
 package com.mycompany.fileservice.integration;
 
+import java.io.File;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,8 +17,7 @@ import org.springframework.integration.file.filters.SimplePatternFileListFilter;
 import org.springframework.integration.file.transformer.FileToStringTransformer;
 import org.springframework.messaging.MessageChannel;
 
-import java.io.File;
-
+@Slf4j
 @Configuration
 @EnableIntegration
 public class IntegrationConfig {
@@ -32,8 +33,11 @@ public class IntegrationConfig {
     @Bean
     @InboundChannelAdapter(value = "fileInputChannel", poller = @Poller(fixedDelay = "1000"))
     MessageSource<File> fileReadingMessageSource() {
+        File directory = new File(inboundPath);
+        log.info("Application Inbound Path is \"{}\"", directory);
+
         FileReadingMessageSource fileReadingMessageSource = new FileReadingMessageSource();
-        fileReadingMessageSource.setDirectory(new File(inboundPath));
+        fileReadingMessageSource.setDirectory(directory);
         fileReadingMessageSource.setFilter(new SimplePatternFileListFilter("*.txt"));
         fileReadingMessageSource.setUseWatchService(true);
         fileReadingMessageSource.setWatchEvents(WatchEventType.CREATE, WatchEventType.MODIFY);

@@ -1,6 +1,5 @@
-*.DS_Store
 *.log
-shared-integration-files/
+shared/files/
 
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -34,3 +33,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### MAC OS ###
+*.DS_Store
