@@ -2,7 +2,7 @@ package com.mycompany.springintegrationshell.integration;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mycompany.springintegrationshell.dto.CalculatorApiDto;
+import com.mycompany.springintegrationshell.dto.CalculatorApiRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -25,15 +25,14 @@ public class CalculatorApiIntegrationService {
     private final ObjectMapper objectMapper;
 
     @ServiceActivator(inputChannel = "calculatorRouterChannel")
-    public String calculatorHandler(@Payload CalculatorApiDto calculatorApiDto) throws JsonProcessingException {
-        String calculatorApiDtoStr = objectMapper.writeValueAsString(calculatorApiDto);
+    public String calculatorHandler(@Payload CalculatorApiRequest calculatorApiRequest) throws JsonProcessingException {
+        String calculatorApiRequestStr = objectMapper.writeValueAsString(calculatorApiRequest);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        HttpEntity<String> request = new HttpEntity<>(calculatorApiDtoStr, headers);
+        HttpEntity<String> request = new HttpEntity<>(calculatorApiRequestStr, headers);
         ResponseEntity<String> response = restTemplate.postForEntity(calculatorApiUrl, request, String.class);
         return response.getBody();
     }
-
 }

@@ -11,5 +11,4 @@ class SpringIntegrationShellApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }

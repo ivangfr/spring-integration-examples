@@ -4,7 +4,7 @@ The goal of this project is to learn [`String Integration Framework`](https://do
 
 ## Project Architecture
 
-![project-diagram](images/project-diagram.png)
+![project-diagram](documentation/project-diagram.png)
 
 ## Applications
 
@@ -30,13 +30,13 @@ The goal of this project is to learn [`String Integration Framework`](https://do
 
 ## Prerequisites
 
-- [`Java 11+`](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+- [`Java 11+`](https://www.oracle.com/java/technologies/downloads/#java11)
 - [`Docker`](https://www.docker.com/)
 - [`Docker-Compose`](https://docs.docker.com/compose/install/)
 
 ## Start Environment
 
-- Open a terminal and make sure you are inside `spring-integration-examples` root folder
+- Open a terminal and navigate to `spring-integration-examples` root folder
 
 - Run the following command
   ```
@@ -47,21 +47,21 @@ The goal of this project is to learn [`String Integration Framework`](https://do
 
 - **calculator-api**
 
-  In a terminal and inside `spring-integration-examples` run
+  In a terminal and inside `spring-integration-examples` root folder run
   ```
   ./mvnw clean spring-boot:run --projects calculator-api
   ```
 
 - **file-service**
 
-  Open a new terminal and inside `spring-integration-examples` run
+  Open a new terminal and inside `spring-integration-examples` root folder run
   ```
   ./mvnw clean spring-boot:run --projects file-service
   ```
 
 - **spring-integration-shell**
 
-  Open a new terminal and inside `spring-integration-examples` run
+  Open a new terminal and inside `spring-integration-examples` root folder run
   ```
   ./mvnw clean spring-boot:run --projects spring-integration-shell
   ```
@@ -122,6 +122,12 @@ The goal of this project is to learn [`String Integration Framework`](https://do
     -d '{"operation": "ADD", "a": 10, "b": 12}'
   ```
 
+- **spring-integration-shell**
+
+  The `spring-integration-shell` UI and a sample of execution
+
+  ![spring-integration-shell](documentation/spring-integration-shell.png)
+
 - **file-service**
 
   A sample of request to get information about a file
@@ -129,20 +135,13 @@ The goal of this project is to learn [`String Integration Framework`](https://do
   curl -i http://localhost:9081/api/files/file.txt
   ```
 
-- **spring-integration-shell**
-
-  The `spring-integration-shell` UI and a sample of execution
-
-  ![spring-integration-shell](images/spring-integration-shell.png)
-
 ## Useful Commands
 
 - **MongoDB**
 
   Find all files
   ```
-  docker exec -it mongodb mongo
-  use filesdb
+  docker exec -it mongodb mongo filesdb
   db.myFiles.find()
   ```
   > Type `exit` to get out of `MongoDB shell`

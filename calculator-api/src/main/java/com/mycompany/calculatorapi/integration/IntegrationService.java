@@ -1,6 +1,6 @@
 package com.mycompany.calculatorapi.integration;
 
-import com.mycompany.calculatorapi.rest.dto.OperationDto;
+import com.mycompany.calculatorapi.rest.dto.OperationRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.integration.annotation.ServiceActivator;
@@ -17,32 +17,31 @@ import java.math.RoundingMode;
 public class IntegrationService {
 
     @ServiceActivator(inputChannel = "gatewayChannel")
-    void logHandler(Message<OperationDto> message) {
+    void logHandler(Message<OperationRequest> message) {
         log.info("Received message\n---\nHEADERS: {};\nPAYLOAD: {}\n---", message.getHeaders(), message.getPayload());
     }
 
     @ServiceActivator(inputChannel = "addRouterChannel")
-    public BigDecimal addHandler(@Payload OperationDto operationDto) {
-        return operationDto.getA().add(operationDto.getB());
+    public BigDecimal addHandler(@Payload OperationRequest operationRequest) {
+        return operationRequest.getA().add(operationRequest.getB());
     }
 
     @ServiceActivator(inputChannel = "subtractRouterChannel")
-    public BigDecimal subtractHandler(@Payload OperationDto operationDto) {
-        return operationDto.getA().subtract(operationDto.getB());
+    public BigDecimal subtractHandler(@Payload OperationRequest operationRequest) {
+        return operationRequest.getA().subtract(operationRequest.getB());
     }
 
     @ServiceActivator(inputChannel = "divideRouterChannel")
-    public BigDecimal divideHandler(@Payload OperationDto operationDto) {
+    public BigDecimal divideHandler(@Payload OperationRequest operationRequest) {
         try {
-            return operationDto.getA().divide(operationDto.getB(), 2, RoundingMode.HALF_EVEN);
+            return operationRequest.getA().divide(operationRequest.getB(), 2, RoundingMode.HALF_EVEN);
         } catch (ArithmeticException e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Division by 0", e);
         }
     }
 
     @ServiceActivator(inputChannel = "multiplyRouterChannel")
-    public BigDecimal multiplyHandler(@Payload OperationDto operationDto) {
-        return operationDto.getA().multiply(operationDto.getB());
+    public BigDecimal multiplyHandler(@Payload OperationRequest operationRequest) {
+        return operationRequest.getA().multiply(operationRequest.getB());
     }
-
 }

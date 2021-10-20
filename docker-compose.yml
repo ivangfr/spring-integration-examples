@@ -3,10 +3,9 @@ version: "3.8"
 services:
 
   mongodb:
-    image: mongo:4.4.6
+    image: mongo:5.0.3
     container_name: mongodb
     ports:
       - "27017:27017"
     healthcheck:
       test: "echo 'db.stats().ok' | mongo localhost:27017/bookdb --quiet"
-      start_period: 10s

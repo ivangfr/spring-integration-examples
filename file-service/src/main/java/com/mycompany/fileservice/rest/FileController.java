@@ -20,5 +20,4 @@ public class FileController {
     public MyFile getFile(@PathVariable String filename) throws MyFileNotFoundException {
         return myFileService.getFile(filename);
     }
-
 }

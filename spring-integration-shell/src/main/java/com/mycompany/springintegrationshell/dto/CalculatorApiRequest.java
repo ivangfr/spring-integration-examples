@@ -5,7 +5,7 @@ import lombok.Value;
 import java.math.BigDecimal;
 
 @Value
-public class CalculatorApiDto {
+public class CalculatorApiRequest {
 
     Type operation;
     BigDecimal a;
@@ -14,5 +14,4 @@ public class CalculatorApiDto {
     public enum Type {
         ADD, SUBTRACT, DIVIDE, MULTIPLY
     }
-
 }

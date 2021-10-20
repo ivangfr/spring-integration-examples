@@ -1,6 +1,6 @@
 package com.mycompany.calculatorapi.integration;
 
-import com.mycompany.calculatorapi.rest.dto.OperationDto;
+import com.mycompany.calculatorapi.rest.dto.OperationRequest;
 import org.springframework.integration.annotation.Gateway;
 import org.springframework.integration.annotation.MessagingGateway;
 
@@ -10,6 +10,5 @@ import java.math.BigDecimal;
 public interface IntegrationGateway {
 
     @Gateway(requestChannel = "gatewayChannel")
-    BigDecimal sendMessage(OperationDto operationDto);
-
+    BigDecimal sendMessage(OperationRequest operationRequest);
 }

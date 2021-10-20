@@ -12,5 +12,4 @@ public class SpringIntegrationPromptProvider implements PromptProvider {
     public AttributedString getPrompt() {
         return new AttributedString("spring-integration-shell> ", AttributedStyle.DEFAULT.foreground(AttributedStyle.YELLOW));
     }
-
 }

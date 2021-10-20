@@ -1,7 +1,7 @@
 package com.mycompany.calculatorapi.rest;
 
 import com.mycompany.calculatorapi.integration.IntegrationGateway;
-import com.mycompany.calculatorapi.rest.dto.OperationDto;
+import com.mycompany.calculatorapi.rest.dto.OperationRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,8 +19,7 @@ public class CalculatorController {
     private final IntegrationGateway integrationGateway;
 
     @PostMapping("/calculate")
-    public BigDecimal calculate(@Valid @RequestBody OperationDto operationDto) {
-        return integrationGateway.sendMessage(operationDto);
+    public BigDecimal calculate(@Valid @RequestBody OperationRequest operationRequest) {
+        return integrationGateway.sendMessage(operationRequest);
     }
-
 }

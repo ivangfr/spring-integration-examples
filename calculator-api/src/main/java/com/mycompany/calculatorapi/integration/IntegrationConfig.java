@@ -1,6 +1,6 @@
 package com.mycompany.calculatorapi.integration;
 
-import com.mycompany.calculatorapi.rest.dto.OperationDto;
+import com.mycompany.calculatorapi.rest.dto.OperationRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.annotation.Router;
@@ -22,11 +22,10 @@ public class IntegrationConfig {
     @Bean
     ExpressionEvaluatingRouter expressionEvaluatingRouter() {
         ExpressionEvaluatingRouter router = new ExpressionEvaluatingRouter("payload.operation");
-        router.setChannelMapping(OperationDto.Type.ADD.name(), "addRouterChannel");
-        router.setChannelMapping(OperationDto.Type.SUBTRACT.name(), "subtractRouterChannel");
-        router.setChannelMapping(OperationDto.Type.DIVIDE.name(), "divideRouterChannel");
-        router.setChannelMapping(OperationDto.Type.MULTIPLY.name(), "multiplyRouterChannel");
+        router.setChannelMapping(OperationRequest.Type.ADD.name(), "addRouterChannel");
+        router.setChannelMapping(OperationRequest.Type.SUBTRACT.name(), "subtractRouterChannel");
+        router.setChannelMapping(OperationRequest.Type.DIVIDE.name(), "divideRouterChannel");
+        router.setChannelMapping(OperationRequest.Type.MULTIPLY.name(), "multiplyRouterChannel");
         return router;
     }
-
 }

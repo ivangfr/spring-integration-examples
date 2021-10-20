@@ -49,5 +49,4 @@ public class IntegrationConfig {
     FileToStringTransformer fileToStringTransformer() {
         return new FileToStringTransformer();
     }
-
 }

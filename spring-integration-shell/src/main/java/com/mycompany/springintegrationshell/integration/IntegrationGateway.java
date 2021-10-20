@@ -17,5 +17,4 @@ public interface IntegrationGateway {
     void writeToFile(@Header(FileHeaders.FILENAME) String filename,
                      @Header(FileHeaders.ORIGINAL_FILE) File originalFile,
                      String data);
-
 }

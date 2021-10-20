@@ -24,5 +24,4 @@ public class IntegrationService {
         String content = message.getPayload();
         myFileService.saveFile(new MyFile(filename, content));
     }
-
 }

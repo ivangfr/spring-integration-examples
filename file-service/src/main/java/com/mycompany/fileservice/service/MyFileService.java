@@ -8,5 +8,4 @@ public interface MyFileService {
     MyFile getFile(String filename) throws MyFileNotFoundException;
 
     MyFile saveFile(MyFile myFile);
-
 }

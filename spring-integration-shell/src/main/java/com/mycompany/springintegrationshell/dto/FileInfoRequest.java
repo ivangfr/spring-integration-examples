@@ -3,9 +3,7 @@ package com.mycompany.springintegrationshell.dto;
 import lombok.Value;
 
 @Value
-public class GreetingDto {
+public class FileInfoRequest {
 
-    String name;
-
+    String filename;
 }
-

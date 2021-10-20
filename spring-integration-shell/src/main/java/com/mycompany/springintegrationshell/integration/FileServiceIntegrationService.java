@@ -1,6 +1,6 @@
 package com.mycompany.springintegrationshell.integration;
 
-import com.mycompany.springintegrationshell.dto.FileInfoDto;
+import com.mycompany.springintegrationshell.dto.FileInfoRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -19,10 +19,9 @@ public class FileServiceIntegrationService {
     private final RestTemplate restTemplate;
 
     @ServiceActivator(inputChannel = "fileInfoRouterChannel")
-    public String fileInfoHandler(@Payload FileInfoDto fileContentDto) {
-        String url = String.format("%s/%s", fileServiceUrl, fileContentDto.getFilename());
+    public String fileInfoHandler(@Payload FileInfoRequest fileInfoRequest) {
+        String url = String.format("%s/%s", fileServiceUrl, fileInfoRequest.getFilename());
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
         return response.getBody();
     }
-
 }

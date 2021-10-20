@@ -1,8 +1,8 @@
 package com.mycompany.springintegrationshell.command;
 
-import com.mycompany.springintegrationshell.dto.CalculatorApiDto;
-import com.mycompany.springintegrationshell.dto.FileInfoDto;
-import com.mycompany.springintegrationshell.dto.GreetingDto;
+import com.mycompany.springintegrationshell.dto.CalculatorApiRequest;
+import com.mycompany.springintegrationshell.dto.FileInfoRequest;
+import com.mycompany.springintegrationshell.dto.GreetingRequest;
 import com.mycompany.springintegrationshell.integration.IntegrationGateway;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,37 +24,36 @@ public class SpringIntegrationCommands {
 
     @ShellMethod("Add two numbers")
     public String add(BigDecimal a, BigDecimal b) {
-        return integrationGateway.sendMessage(new CalculatorApiDto(CalculatorApiDto.Type.ADD, a, b));
+        return integrationGateway.sendMessage(new CalculatorApiRequest(CalculatorApiRequest.Type.ADD, a, b));
     }
 
     @ShellMethod("Subtract two numbers")
     public String subtract(BigDecimal a, BigDecimal b) {
-        return integrationGateway.sendMessage(new CalculatorApiDto(CalculatorApiDto.Type.SUBTRACT, a, b));
+        return integrationGateway.sendMessage(new CalculatorApiRequest(CalculatorApiRequest.Type.SUBTRACT, a, b));
     }
 
     @ShellMethod("Divide two numbers")
     public String divide(BigDecimal a, BigDecimal b) {
-        return integrationGateway.sendMessage(new CalculatorApiDto(CalculatorApiDto.Type.DIVIDE, a, b));
+        return integrationGateway.sendMessage(new CalculatorApiRequest(CalculatorApiRequest.Type.DIVIDE, a, b));
     }
 
     @ShellMethod("Multiply two numbers")
     public String multiply(BigDecimal a, BigDecimal b) {
-        return integrationGateway.sendMessage(new CalculatorApiDto(CalculatorApiDto.Type.MULTIPLY, a, b));
+        return integrationGateway.sendMessage(new CalculatorApiRequest(CalculatorApiRequest.Type.MULTIPLY, a, b));
     }
 
     @ShellMethod("Greet someone")
     public String greet(@ShellOption(defaultValue = "World") String name) {
-        return integrationGateway.sendMessage(new GreetingDto(name));
+        return integrationGateway.sendMessage(new GreetingRequest(name));
     }
 
     @ShellMethod("Get info from file")
     public String getInfoFromFile(String filename) {
-        return integrationGateway.sendMessage(new FileInfoDto(filename));
+        return integrationGateway.sendMessage(new FileInfoRequest(filename));
     }
 
     @ShellMethod("Write to file")
     public void writeToFile(String filename, String content) {
         integrationGateway.writeToFile(filename, Paths.get(outboundPath).toFile(), content);
     }
-
 }

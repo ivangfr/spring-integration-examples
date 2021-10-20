@@ -10,5 +10,4 @@ public class MyFile {
     private String filename;
     private String content;
     private LocalDateTime lastModifiedDate;
-
 }

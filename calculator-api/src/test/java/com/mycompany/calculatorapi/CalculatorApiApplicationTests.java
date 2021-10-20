@@ -11,5 +11,4 @@ class CalculatorApiApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }

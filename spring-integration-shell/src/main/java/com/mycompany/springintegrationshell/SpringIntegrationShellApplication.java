@@ -9,5 +9,4 @@ public class SpringIntegrationShellApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringIntegrationShellApplication.class, args);
     }
-
 }

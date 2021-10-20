@@ -22,5 +22,4 @@ public class MyFileServiceImpl implements MyFileService {
     public MyFile saveFile(MyFile myFile) {
         return myFileRepository.save(myFile);
     }
-
 }
