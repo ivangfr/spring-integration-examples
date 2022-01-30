@@ -90,14 +90,14 @@ The goal of this project is to learn [`String Integration Framework`](https://do
   - **file-service**
 
     | Environment Variable | Description                                                         |
-    | -------------------- | ------------------------------------------------------------------- |
+    |----------------------|---------------------------------------------------------------------|
     | `MONGODB_HOST`       | Specify host of the `MongoDB` database to use (default `localhost`) |
     | `MONGODB_PORT `      | Specify port of the `MongoDB` database to use (default `27017`)     |
 
   - **spring-integration-shell**
 
     | Environment Variable  | Description                                                       |
-    | --------------------- | ----------------------------------------------------------------- |
+    |-----------------------|-------------------------------------------------------------------|
     | `CALCULATOR_API_HOST` | Specify host of the `calculator-api` to use (default `localhost`) |
     | `CALCULATOR_API_PORT` | Specify port of the `calculator-api` to use (default `9080`)      |
     | `FILE_SERVICE_HOST`   | Specify host of the `file-service` to use (default `localhost`)   |
