@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.mycompany</groupId>
+        <groupId>com.ivanfranchin</groupId>
         <artifactId>spring-integration-examples</artifactId>
         <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
@@ -14,8 +14,8 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <spring-shell.version>2.0.1.RELEASE</spring-shell.version>
-        <spring-web.version>5.3.20</spring-web.version>
+        <spring-shell.version>2.1.0</spring-shell.version>
+        <spring-web.version>5.3.22</spring-web.version>
         <httpclient.version>4.5.13</httpclient.version>
         <jackson-databind.version>2.13.3</jackson-databind.version>
     </properties>
@@ -69,5 +69,29 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.shell</groupId>
+                <artifactId>spring-shell-dependencies</artifactId>
+                <version>${spring-shell.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <executable>true</executable>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

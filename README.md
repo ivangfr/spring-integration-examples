@@ -30,7 +30,7 @@ The goal of this project is to learn [`String Integration Framework`](https://do
 
 ## Prerequisites
 
-- [`Java 11+`](https://www.oracle.com/java/technologies/downloads/#java11)
+- [`Java 17+`](https://www.oracle.com/java/technologies/downloads/#java17)
 - [`Docker`](https://www.docker.com/)
 - [`Docker-Compose`](https://docs.docker.com/compose/install/)
 
@@ -126,7 +126,7 @@ The goal of this project is to learn [`String Integration Framework`](https://do
 
   The `spring-integration-shell` UI and a sample of execution
 
-  ![spring-integration-shell](documentation/spring-integration-shell.png)
+  ![spring-integration-shell](documentation/spring-integration-shell.jpeg)
 
 - **file-service**
 
