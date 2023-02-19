@@ -1,13 +1,13 @@
 package com.ivanfranchin.calculatorapi.rest;
 
-import com.ivanfranchin.calculatorapi.rest.dto.OperationRequest;
 import com.ivanfranchin.calculatorapi.integration.IntegrationGateway;
+import com.ivanfranchin.calculatorapi.rest.dto.OperationRequest;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
 import java.math.BigDecimal;
 
 @RestController
