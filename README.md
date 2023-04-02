@@ -92,7 +92,7 @@ The goal of this project is to learn [`String Integration Framework`](https://do
     | Environment Variable | Description                                                         |
     |----------------------|---------------------------------------------------------------------|
     | `MONGODB_HOST`       | Specify host of the `MongoDB` database to use (default `localhost`) |
-    | `MONGODB_PORT `      | Specify port of the `MongoDB` database to use (default `27017`)     |
+    | `MONGODB_PORT`       | Specify port of the `MongoDB` database to use (default `27017`)     |
 
   - **spring-integration-shell**
 
