@@ -36,7 +36,6 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
 - [`Java 17+`](https://www.oracle.com/java/technologies/downloads/#java17)
 - [`Docker`](https://www.docker.com/)
-- [`Docker-Compose`](https://docs.docker.com/compose/install/)
 
 ## Start Environment
 
@@ -44,7 +43,7 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
 - Run the following command
   ```
-  docker-compose up -d
+  docker compose up -d
   ```
 
 ## Running Applications with Maven
@@ -159,9 +158,9 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
     ```
     ./stop-services.sh
     ```
-- To stop and remove `MongoDB` and docker-compose network, go to a terminal and, inside `spring-integration-examples` root folder, run the command below
+- To stop and remove `MongoDB` and docker compose network, go to a terminal and, inside `spring-integration-examples` root folder, run the command below
   ```
-  docker-compose down -v
+  docker compose down -v
   ```
 
 ## Cleanup
