@@ -144,7 +144,7 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
   Find all files
   ```
-  docker exec -it mongodb mongo filesdb
+  docker exec -it mongodb mongosh filesdb
   db.myFiles.find()
   ```
   > Type `exit` to get out of `MongoDB shell`
@@ -172,5 +172,4 @@ To remove the Docker images created by this project, go to a terminal and, insid
 
 ## References
 
-- https://docs.spring.io/spring-integration/reference/html/index.html
-- https://github.com/spring-projects/spring-integration/blob/master/src/reference/asciidoc/file.adoc
+- https://docs.spring.io/spring-integration/reference/index.html
