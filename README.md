@@ -1,6 +1,6 @@
 # spring-integration-examples
 
-The goal of this project is to learn [`String Integration Framework`](https://docs.spring.io/spring-integration/reference/html/index.html). For it, we will implement some [`Spring Boot`](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/) applications and try to use the well-known [`Enterprise Integration Patterns`](https://www.enterpriseintegrationpatterns.com/patterns/messaging/toc.html). 
+The goal of this project is to learn [`String Integration`](https://docs.spring.io/spring-integration/reference/). For it, we will implement some [`Spring Boot`](https://docs.spring.io/spring-boot/index.html) applications and try to use the well-known [`Enterprise Integration Patterns`](https://www.enterpriseintegrationpatterns.com/patterns/messaging/toc.html). 
 
 ## Proof-of-Concepts & Articles
 
@@ -34,7 +34,7 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
 ## Prerequisites
 
-- [`Java 17+`](https://www.oracle.com/java/technologies/downloads/#java17)
+- [`Java 21+`](https://www.oracle.com/java/technologies/downloads/#java21)
 - [`Docker`](https://www.docker.com/)
 
 ## Start Environment
@@ -75,14 +75,9 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
   - In a terminal, make sure you are in `spring-integration-examples` root folder
   - Run the following script to build the Docker images
-    - JVM
-      ```
-      ./docker-build.sh
-      ```
-    - Native (it's not implemented yet)
-      ```
-      ./docker-build.sh native
-      ```
+    ```
+    ./docker-build.sh
+    ```
 
 - ### Environment Variables
 
@@ -169,7 +164,3 @@ To remove the Docker images created by this project, go to a terminal and, insid
 ```
 ./remove-docker-images.sh
 ```
-
-## References
-
-- https://docs.spring.io/spring-integration/reference/index.html

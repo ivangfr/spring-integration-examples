@@ -14,10 +14,10 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <spring-shell.version>3.2.2</spring-shell.version>
-        <spring-web.version>6.1.4</spring-web.version>
-        <httpclient5.version>5.3.1</httpclient5.version>
-        <jackson-databind.version>2.15.4</jackson-databind.version>
+        <spring-shell.version>3.3.3</spring-shell.version>
+        <spring-web.version>6.1.14</spring-web.version>
+        <httpclient5.version>5.4.1</httpclient5.version>
+        <jackson-databind.version>2.17.2</jackson-databind.version>
     </properties>
 
     <dependencies>
