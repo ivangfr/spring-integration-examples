@@ -59,14 +59,14 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
   Open a new terminal and inside `spring-integration-examples` root folder run
   ```
-  ./mvnw clean spring-boot:run --projects file-service
+  SHARED_FILES_PATH=${PWD}/shared/files ./mvnw clean spring-boot:run --projects file-service
   ```
 
 - **spring-integration-shell**
 
   Open a new terminal and inside `spring-integration-examples` root folder run
   ```
-  ./mvnw clean spring-boot:run --projects spring-integration-shell
+  SHARED_FILES_PATH=${PWD}/shared/files ./mvnw clean spring-boot:run --projects spring-integration-shell
   ```
 
 ## Run applications as Docker containers
