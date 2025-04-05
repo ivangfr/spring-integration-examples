@@ -27,13 +27,13 @@ public class IntegrationConfig {
     private String inboundPath;
 
     @Bean
-    public MessageChannel fileInputChannel() {
+    MessageChannel fileInputChannel() {
         return new DirectChannel();
     }
 
     @Bean
     @InboundChannelAdapter(value = "fileInputChannel", poller = @Poller(fixedDelay = "1000"))
-    public MessageSource<File> fileReadingMessageSource() {
+    MessageSource<File> fileReadingMessageSource() {
         File directory = new File(inboundPath);
         log.info("Application Inbound Path is \"{}\"", directory);
 
@@ -47,7 +47,7 @@ public class IntegrationConfig {
 
     @Bean
     @Transformer(inputChannel = "fileInputChannel", outputChannel = "transformerFileChannel")
-    public FileToStringTransformer fileToStringTransformer() {
+    FileToStringTransformer fileToStringTransformer() {
         return new FileToStringTransformer();
     }
 }

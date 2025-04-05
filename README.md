@@ -1,6 +1,6 @@
 # spring-integration-examples
 
-The goal of this project is to learn [`String Integration`](https://docs.spring.io/spring-integration/reference/). For it, we will implement some [`Spring Boot`](https://docs.spring.io/spring-boot/index.html) applications and try to use the well-known [`Enterprise Integration Patterns`](https://www.enterpriseintegrationpatterns.com/patterns/messaging/toc.html). 
+The goal of this project is to learn [`Spring Integration`](https://docs.spring.io/spring-integration/reference/). For it, we will implement some [`Spring Boot`](https://docs.spring.io/spring-boot/index.html) applications and try to use the well-known [`Enterprise Integration Patterns`](https://www.enterpriseintegrationpatterns.com/patterns/messaging/toc.html). 
 
 ## Proof-of-Concepts & Articles
 
@@ -16,7 +16,7 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
   `Spring Boot` Java Web application that exposes an endpoint so that users can submit the operation (addition, subtraction, division or multiplication) they want to perform over two decimal numbers `a` and `b`.
   
-  ```
+  ```text
   POST /api/calculate -d { "a": number, "b": number, "operation": ["ADD" | "SUBTRACT" | "DIVIDE" | "MULTIPLY"] }
   ```
   
@@ -24,7 +24,7 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
   `Spring Boot` Java Web application that exposes an endpoint so that users can get information about a file. This service keeps looking at `shared/files` folder for created or modified files and save their content and info in [`MongoDB`](https://www.mongodb.com/).
   
-  ```
+  ```text
   GET api/files/{filename}
   ```
 
@@ -34,15 +34,14 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
 ## Prerequisites
 
-- [`Java 21+`](https://www.oracle.com/java/technologies/downloads/#java21)
-- [`Docker`](https://www.docker.com/)
+- [`Java 21`](https://www.oracle.com/java/technologies/downloads/#java21) or higher;
+- A containerization tool (e.g., [`Docker`](https://www.docker.com), [`Podman`](https://podman.io), etc.)
 
 ## Start Environment
 
-- Open a terminal and navigate to `spring-integration-examples` root folder
-
-- Run the following command
-  ```
+- Open a terminal and navigate to the `spring-integration-examples` root folder.
+- Run the following command:
+  ```bash
   docker compose up -d
   ```
 
@@ -50,22 +49,22 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
 - **calculator-api**
 
-  In a terminal and inside `spring-integration-examples` root folder run
-  ```
+  In a terminal and inside the `spring-integration-examples` root folder run:
+  ```bash
   ./mvnw clean spring-boot:run --projects calculator-api
   ```
 
 - **file-service**
 
-  Open a new terminal and inside `spring-integration-examples` root folder run
-  ```
+  Open a new terminal and inside the `spring-integration-examples` root folder run:
+  ```bash
   SHARED_FILES_PATH=${PWD}/shared/files ./mvnw clean spring-boot:run --projects file-service
   ```
 
 - **spring-integration-shell**
 
-  Open a new terminal and inside `spring-integration-examples` root folder run
-  ```
+  Open a new terminal and inside the `spring-integration-examples` root folder run:
+  ```bash
   SHARED_FILES_PATH=${PWD}/shared/files ./mvnw clean spring-boot:run --projects spring-integration-shell
   ```
 
@@ -73,10 +72,10 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
 - ### Build Docker Images
 
-  - In a terminal, make sure you are in `spring-integration-examples` root folder
-  - Run the following script to build the Docker images
-    ```
-    ./docker-build.sh
+  - In a terminal, make sure you are in the `spring-integration-examples` root folder.
+  - Run the following script to build the Docker images:
+    ```bash
+    ./build-docker-images.sh
     ```
 
 - ### Environment Variables
@@ -103,9 +102,9 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
 - ### Start Docker Containers
 
-  - In a terminal, make sure you are inside `spring-integration-examples` root folder
-  - Run following command
-    ```
+  - In a terminal, make sure you are inside the `spring-integration-examples` root folder.
+  - Run following command:
+    ```bash
     ./start-services.sh && ./start-shell.sh
     ```
 
@@ -113,8 +112,8 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
 - **calculator-api**
 
-  A sample of request to add two numbers
-  ```
+  A sample of request to add two numbers:
+  ```bash
   curl -i -X POST http://localhost:9080/api/calculate \
     -H 'Content-Type: application/json' \
     -d '{"operation": "ADD", "a": 10, "b": 12}'
@@ -122,14 +121,14 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
 - **spring-integration-shell**
 
-  The `spring-integration-shell` UI and a sample of execution
+  The `spring-integration-shell` UI and a sample of execution:
 
   ![spring-integration-shell](documentation/spring-integration-shell.jpeg)
 
 - **file-service**
 
-  A sample of request to get information about a file
-  ```
+  A sample of request to get information about a file:
+  ```bash
   curl -i http://localhost:9081/api/files/file.txt
   ```
 
@@ -137,8 +136,8 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
 - **MongoDB**
 
-  Find all files
-  ```
+  Find all files:
+  ```bash
   docker exec -it mongodb mongosh filesdb
   db.myFiles.find()
   ```
@@ -146,21 +145,21 @@ On [ivangfr.github.io](https://ivangfr.github.io), I have compiled my Proof-of-C
 
 ## Shutdown
 
-- To stop `spring-integration-shell`, go to the terminal where it is running and type `exit`
-- To stop `calculator-api` and `file-service`
-  - If you start them with `Maven`, go to the terminals were they are running and press `Ctrl+C`
-  - If you start them as Docker containers, go to a terminal and, inside `spring-integration-examples` root folder, run the following script
-    ```
+- To stop `spring-integration-shell`, go to the terminal where it is running and type `exit`.
+- To stop `calculator-api` and `file-service`:
+  - If you start them with `Maven`, go to the terminals were they are running and press `Ctrl+C`.
+  - If you start them as Docker containers, go to a terminal and, inside the `spring-integration-examples` root folder, run the following script:
+    ```bash
     ./stop-services.sh
     ```
-- To stop and remove `MongoDB` and docker compose network, go to a terminal and, inside `spring-integration-examples` root folder, run the command below
-  ```
+- To stop and remove `MongoDB` and docker compose network, go to a terminal and, inside the `spring-integration-examples` root folder, run the command below:
+  ```bash
   docker compose down -v
   ```
 
 ## Cleanup
 
-To remove the Docker images created by this project, go to a terminal and, inside `spring-integration-examples` root folder, run the following script
-```
+To remove the Docker images created by this project, go to a terminal and, inside the `spring-integration-examples` root folder, run the following script:
+```bash
 ./remove-docker-images.sh
 ```

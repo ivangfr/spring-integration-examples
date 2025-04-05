@@ -14,7 +14,7 @@ public class CalculatorApiClientConfig {
     private String calculatorApiUrl;
 
     @Bean
-    public CalculatorApiClient calculatorApiClient(RestClient.Builder builder) {
+    CalculatorApiClient calculatorApiClient(RestClient.Builder builder) {
         RestClient restClient = builder.baseUrl(calculatorApiUrl).build();
         RestClientAdapter adapter = RestClientAdapter.create(restClient);
         HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();

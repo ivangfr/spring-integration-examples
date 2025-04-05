@@ -14,13 +14,13 @@ import org.springframework.messaging.MessageChannel;
 public class IntegrationConfig {
 
     @Bean
-    public MessageChannel gatewayChannel() {
+    MessageChannel gatewayChannel() {
         return new PublishSubscribeChannel();
     }
 
     @Router(inputChannel = "gatewayChannel")
     @Bean
-    public ExpressionEvaluatingRouter expressionEvaluatingRouter() {
+    ExpressionEvaluatingRouter expressionEvaluatingRouter() {
         ExpressionEvaluatingRouter router = new ExpressionEvaluatingRouter("payload.operation");
         router.setChannelMapping(OperationRequest.Type.ADD.name(), "addRouterChannel");
         router.setChannelMapping(OperationRequest.Type.SUBTRACT.name(), "subtractRouterChannel");

@@ -14,7 +14,7 @@ public class FileServiceClientConfig {
     private String fileServiceUrl;
 
     @Bean
-    public FileServiceClient fileServiceClient(RestClient.Builder builder) {
+    FileServiceClient fileServiceClient(RestClient.Builder builder) {
         RestClient restClient = builder.baseUrl(fileServiceUrl).build();
         RestClientAdapter adapter = RestClientAdapter.create(restClient);
         HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();

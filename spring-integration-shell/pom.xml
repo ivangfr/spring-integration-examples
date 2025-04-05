@@ -6,19 +6,29 @@
         <groupId>com.ivanfranchin</groupId>
         <artifactId>spring-integration-examples</artifactId>
         <version>1.0.0</version>
-        <relativePath>../pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
     </parent>
-
     <artifactId>spring-integration-shell</artifactId>
     <name>spring-integration-shell</name>
     <description>Demo project for Spring Boot</description>
-
+    <url/>
+    <licenses>
+        <license/>
+    </licenses>
+    <developers>
+        <developer/>
+    </developers>
+    <scm>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
+    </scm>
     <properties>
-        <spring-shell.version>3.3.3</spring-shell.version>
-        <spring-web.version>6.1.14</spring-web.version>
-        <jackson-databind.version>2.17.2</jackson-databind.version>
+        <spring-shell.version>3.4.0</spring-shell.version>
+        <spring-web.version>6.2.5</spring-web.version>
+        <jackson-databind.version>2.18.3</jackson-databind.version>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -64,7 +74,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
     <dependencyManagement>
         <dependencies>
             <dependency>

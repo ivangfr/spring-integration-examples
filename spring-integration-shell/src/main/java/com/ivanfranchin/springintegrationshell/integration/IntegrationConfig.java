@@ -22,13 +22,13 @@ import org.springframework.messaging.MessageHandler;
 public class IntegrationConfig {
 
     @Bean
-    public MessageChannel gatewayChannel() {
+    MessageChannel gatewayChannel() {
         return new PublishSubscribeChannel();
     }
 
     @Router(inputChannel = "gatewayChannel")
     @Bean
-    public PayloadTypeRouter payloadTypeRouter() {
+    PayloadTypeRouter payloadTypeRouter() {
         PayloadTypeRouter router = new PayloadTypeRouter();
         router.setChannelMapping(CalculatorApiRequest.class.getName(), "calculatorRouterChannel");
         router.setChannelMapping(GreetingRequest.class.getName(), "greetingRouterChannel");
@@ -38,7 +38,7 @@ public class IntegrationConfig {
 
     @ServiceActivator(inputChannel = "writeFileChannel")
     @Bean
-    public MessageHandler fileWritingMessageHandler() {
+    MessageHandler fileWritingMessageHandler() {
         Expression directoryExpression = new SpelExpressionParser().parseExpression("headers.file_originalFile");
         FileWritingMessageHandler fileWritingMessageHandler = new FileWritingMessageHandler(directoryExpression);
         fileWritingMessageHandler.setFileExistsMode(FileExistsMode.APPEND);
