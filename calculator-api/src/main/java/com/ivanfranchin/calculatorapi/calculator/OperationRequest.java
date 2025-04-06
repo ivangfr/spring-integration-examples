@@ -1,4 +1,4 @@
-package com.ivanfranchin.calculatorapi.rest.dto;
+package com.ivanfranchin.calculatorapi.calculator;
 
 import jakarta.validation.constraints.NotNull;
 

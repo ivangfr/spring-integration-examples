@@ -1,4 +1,4 @@
-package com.ivanfranchin.fileservice.exception;
+package com.ivanfranchin.fileservice.myfile.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

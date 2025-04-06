@@ -1,6 +1,6 @@
 package com.ivanfranchin.calculatorapi.integration;
 
-import com.ivanfranchin.calculatorapi.rest.dto.OperationRequest;
+import com.ivanfranchin.calculatorapi.calculator.OperationRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.annotation.Router;

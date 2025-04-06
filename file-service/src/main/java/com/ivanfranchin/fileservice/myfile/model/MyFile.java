@@ -1,4 +1,4 @@
-package com.ivanfranchin.fileservice.model;
+package com.ivanfranchin.fileservice.myfile.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

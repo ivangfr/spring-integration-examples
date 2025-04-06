@@ -1,6 +1,6 @@
 package com.ivanfranchin.calculatorapi.integration;
 
-import com.ivanfranchin.calculatorapi.rest.dto.OperationRequest;
+import com.ivanfranchin.calculatorapi.calculator.OperationRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

@@ -1,7 +1,7 @@
 package com.ivanfranchin.fileservice.integration;
 
-import com.ivanfranchin.fileservice.model.MyFile;
-import com.ivanfranchin.fileservice.service.MyFileService;
+import com.ivanfranchin.fileservice.myfile.model.MyFile;
+import com.ivanfranchin.fileservice.myfile.MyFileService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.integration.annotation.ServiceActivator;

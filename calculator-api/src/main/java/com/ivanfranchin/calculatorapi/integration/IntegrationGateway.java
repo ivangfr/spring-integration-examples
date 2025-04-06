@@ -1,6 +1,6 @@
 package com.ivanfranchin.calculatorapi.integration;
 
-import com.ivanfranchin.calculatorapi.rest.dto.OperationRequest;
+import com.ivanfranchin.calculatorapi.calculator.OperationRequest;
 import org.springframework.integration.annotation.Gateway;
 import org.springframework.integration.annotation.MessagingGateway;
 

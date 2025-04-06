@@ -1,8 +1,7 @@
-package com.ivanfranchin.fileservice.rest;
+package com.ivanfranchin.fileservice.myfile;
 
-import com.ivanfranchin.fileservice.exception.MyFileNotFoundException;
-import com.ivanfranchin.fileservice.model.MyFile;
-import com.ivanfranchin.fileservice.service.MyFileService;
+import com.ivanfranchin.fileservice.myfile.exception.MyFileNotFoundException;
+import com.ivanfranchin.fileservice.myfile.model.MyFile;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,7 +1,6 @@
-package com.ivanfranchin.calculatorapi.rest;
+package com.ivanfranchin.calculatorapi.calculator;
 
 import com.ivanfranchin.calculatorapi.integration.IntegrationGateway;
-import com.ivanfranchin.calculatorapi.rest.dto.OperationRequest;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
