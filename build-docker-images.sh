@@ -14,16 +14,16 @@ SPRING_INTEGRATION_SHELL_DOCKER_IMAGE_NAME="${DOCKER_IMAGE_PREFIX}/${SPRING_INTE
 SKIP_TESTS="true"
 
 ./mvnw clean spring-boot:build-image \
---projects "$CALCULATOR_API_APP_NAME" \
--DskipTests="$SKIP_TESTS" \
--Dspring-boot.build-image.imageName="$CALCULATOR_API_DOCKER_IMAGE_NAME"
+  --projects "$CALCULATOR_API_APP_NAME" \
+  -DskipTests="$SKIP_TESTS" \
+  -Dspring-boot.build-image.imageName="$CALCULATOR_API_DOCKER_IMAGE_NAME"
 
 ./mvnw clean spring-boot:build-image \
---projects "$FILE_SERVICE_APP_NAME" \
--DskipTests="$SKIP_TESTS" \
--Dspring-boot.build-image.imageName="$FILE_SERVICE_DOCKER_IMAGE_NAME"
+  --projects "$FILE_SERVICE_APP_NAME" \
+  -DskipTests="$SKIP_TESTS" \
+  -Dspring-boot.build-image.imageName="$FILE_SERVICE_DOCKER_IMAGE_NAME"
 
 ./mvnw clean spring-boot:build-image \
---projects "$SPRING_INTEGRATION_SHELL_APP_NAME" \
--DskipTests="$SKIP_TESTS" \
--Dspring-boot.build-image.imageName="$SPRING_INTEGRATION_SHELL_DOCKER_IMAGE_NAME"
+  --projects "$SPRING_INTEGRATION_SHELL_APP_NAME" \
+  -DskipTests="$SKIP_TESTS" \
+  -Dspring-boot.build-image.imageName="$SPRING_INTEGRATION_SHELL_DOCKER_IMAGE_NAME"
