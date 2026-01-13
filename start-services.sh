@@ -15,6 +15,7 @@ echo
 echo "Starting file-service..."
 
 docker run -d --rm --name file-service -p 9081:9081 \
+  -u $(id -u):$(id -g) \
   -e MONGODB_HOST=mongodb \
   -e SHARED_FILES_PATH=/app/shared/files \
   -v ${PWD}/shared:/app/shared \

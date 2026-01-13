@@ -10,9 +10,9 @@ import org.springframework.integration.annotation.Transformer;
 import org.springframework.integration.channel.DirectChannel;
 import org.springframework.integration.config.EnableIntegration;
 import org.springframework.integration.core.MessageSource;
-import org.springframework.integration.file.FileReadingMessageSource;
-import org.springframework.integration.file.FileReadingMessageSource.WatchEventType;
 import org.springframework.integration.file.filters.SimplePatternFileListFilter;
+import org.springframework.integration.file.inbound.FileReadingMessageSource;
+import org.springframework.integration.file.inbound.FileReadingMessageSource.WatchEventType;
 import org.springframework.integration.file.transformer.FileToStringTransformer;
 import org.springframework.messaging.MessageChannel;
 

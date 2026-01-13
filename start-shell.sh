@@ -4,6 +4,7 @@ echo
 echo "Starting spring-integration-shell..."
 
 docker run -it --rm --name spring-integration-shell \
+  -u $(id -u):$(id -g) \
   -e CALCULATOR_API_HOST=calculator-api \
   -e FILE_SERVICE_HOST=file-service \
   -e SHARED_FILES_PATH=/app/shared/files \
